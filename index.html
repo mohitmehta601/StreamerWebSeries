@@ -1,0 +1,2251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamer-Web Series</title>
+    <link rel="icon" type="jpge/png" href="logo.png">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"
+        integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: linear-gradient(black, rgb(72, 71, 71), black);
+        }
+
+        /* top nav bar */
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Segoe UI';
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 300%;
+        }
+
+        .logo img {
+            padding-top: 15px;
+            width: 80px;
+        }
+
+        .name {
+            color: aqua;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .logo img {
+                width: 60px;
+            }
+
+            .name {
+                font-size: 70%;
+            }
+
+            .top {
+                justify-content: space-between;
+            }
+        }
+
+
+
+        /* main menu */
+        .main-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu ol {
+            list-style-type: none;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            column-gap: px;
+            border: 5px solid white;
+        }
+
+        .menu ol a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            height: 43px;
+            width: 100px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Segoe UI';
+        }
+
+        .a {
+            border-radius: 10px;
+            background-color: rgb(255, 0, 0);
+        }
+
+        .b :hover {
+            border-radius: 10px;
+            background-color: rgb(44, 43, 43);
+        }
+
+
+
+
+
+        /* image slider */
+        .slideshow-container {
+            width: 99vw;
+            height: 65vh;
+            position: relative;
+            margin: auto;
+        }
+
+        .slideshow-container img {
+            border-radius: 20px;
+            height: 65vh;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+
+        .slider {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .title {
+                font-size: 160%;
+            }
+
+            .slideshow-container {
+                height: 85vw;
+            }
+
+            .slideshow-container img {
+                height: 85vw;
+            }
+
+            .menu ol a {
+                width: 24vw;
+            }
+        }
+
+
+
+        /* movies slider */
+        .title {
+            font-size: 250%;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding-left: 20px;
+            padding-top: 20px;
+            font-family: 'Segoe UI';
+        }
+
+        .containermovie {
+            padding-bottom: 20px;
+            padding-top: 20px;
+            /* padding-left: 4vw; */
+            width: 99vw;
+            height: auto;
+        }
+
+        .grid {
+            max-width: 99vw;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            column-gap: 90px;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+
+        .box img {
+            border-radius: 15px;
+            width: 350px;
+            height: 220px;
+        }
+
+        .scale {
+            transform: scale(1, 1);
+            transition: transform 0.5s ease;
+        }
+
+        .scale button {
+            text-decoration: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .scale p {
+            color: white;
+            font-weight: bold;
+            font-family: 'Segoe UI';
+            font-size: 150%;
+        }
+
+
+        .box:hover .scale {
+            transform: scale(1.1, 1.25);
+        }
+
+
+        @media only screen and (max-width: 1697px) {
+            .containermovie {
+                padding-left: 3vw;
+            }
+
+            .grid {
+                max-width: 99vw;
+                margin: 0 auto;
+                padding: 0;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+                gap: 25px;
+                column-gap: 150px;
+            }
+
+            .containermovie {
+                text-align: center;
+                padding-bottom: 20px;
+                width: 100vw;
+                height: auto;
+            }
+
+            .containermovie .grid img {
+                width: 320px;
+                height: 180px;
+            }
+        }
+
+
+        @media only screen and (max-width: 950px) {
+            .grid {
+                max-width: 99vw;
+                margin: 0 auto;
+                padding: 0;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+                padding-bottom: 0vh;
+            }
+
+            .containermovie {
+                text-align: center;
+                padding-bottom: 20px;
+                width: 99vw;
+                height: auto;
+            }
+
+            .containermovie .grid img {
+                width: 250px;
+                height: 130px;
+            }
+
+            .box {
+                padding: 10px;
+            }
+
+            .box img {
+                border-radius: 15px;
+                width: 250px;
+                height: 150px;
+                max-width: 100%;
+                height: auto;
+            }
+
+            .box p {
+                font-size: 100%;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+        /* scroll bar */
+        body::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: rgb(75, 75, 75);
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: white;
+            border-radius: 20px;
+            border: 3px solid rgb(75, 75, 75);
+        }
+
+
+
+
+
+        /* footer */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Segoe UI';
+        }
+
+        .left {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left .m {
+            padding: 30px;
+        }
+
+        .left .m h1 {
+            color: aqua;
+            font-size: 250%
+        }
+
+        .left li {
+            list-style: none;
+        }
+
+        .right {
+            padding: 50px;
+        }
+
+        .link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .circle {
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 70px;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(75, 75, 75);
+        }
+
+        .image1 {
+            width: 30px;
+        }
+
+        .image2 {
+            width: 50px;
+        }
+
+        .image3 {
+            width: 50px;
+        }
+
+        .image4 {
+            width: 50px;
+        }
+
+        .footerbelow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Segoe UI';
+        }
+
+        .logobelow {
+            display: flex;
+            padding-right: 50px;
+            padding-bottom: 50px;
+        }
+
+        .logobelow h1 {
+            color: aqua;
+            padding-top: 10px;
+            font-size: 300%;
+        }
+
+        .footerbelow .logobelow img {
+            width: 90px;
+        }
+
+        .copy h1 {
+            padding-left: 30px;
+            font-size: 100%;
+        }
+
+        body::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: rgb(75, 75, 75);
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: white;
+            border-radius: 20px;
+            border: 3px solid rgb(75, 75, 75);
+        }
+
+        @media only screen and (max-width: 700px) {
+            .footer {
+                all: revert;
+            }
+
+            .left {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: black;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Segoe UI';
+            }
+
+            .right {
+                all: revert;
+            }
+
+            .right {
+                background-color: black;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Segoe UI';
+            }
+
+            .right h1 {
+                text-align: center;
+            }
+
+            .footerbelow {
+                all: revert;
+            }
+
+            .copy {
+                padding-bottom: 20px;
+                padding-top: 20px;
+                background-color: black;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Segoe UI';
+                font-size: 100%;
+            }
+
+            .copy h1 {
+                text-align: center;
+            }
+
+            .logobelow {
+                background-color: black;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Segoe UI';
+            }
+
+            .left .m h1 {
+                font-size: 180%;
+            }
+
+            .left .m ol li {
+                font-size: 90%
+            }
+
+            .left .l ol li {
+                font-size: 90%
+            }
+
+            .left .l h1 {
+                font-size: 150%;
+            }
+
+            .old {
+                padding-top: 13px;
+                padding-right: 15px;
+            }
+
+            .abovelogo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="body1">
+        <div class="top">
+            <div class="logo">
+                <div class="imagelogo">
+                    <img src="logo.png" alt="image">
+                </div>
+                <div class="name">Streamer</div>
+            </div>
+        </div>
+
+
+        <div class="slider-box">
+    <div class="main-menu">
+        <div class="menu">
+            <ol>
+                <li class="b">
+                    <a href="https://mohitmehta60.github.io/Streamer/">Home</a>
+                </li>
+                <li class="b">
+                    <a href="https://mohitmehta60.github.io/Streamer-movies/">Movies</a>
+                </li>
+                <li class="a">
+                    <a href="https://mohitmehta60.github.io/Streamer-Web-Series/">Web Series</a>
+                </li>
+                <li class="b">
+                    <a href="https://mohitmehta60.github.io/Streamer-TV-Shows/">TV Shows</a>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+
+            <div class="slider">
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                        <img class="slides"
+                            src="https://www.milesweb.in/blog/wp-content/uploads/2021/09/10-insightful-Business-Growth-Learnings-From-Money-Heist.jpg"
+                            style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img class="slides"
+                            src="https://m.media-amazon.com/images/S/pv-target-images/b7a372507c1a7cd3ab438d3e6f06a077f21afd827ea3f777ef4ada8b333aaf95.jpg"
+                            style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img class="slides"
+                            src="https://origin-staticv2.sonyliv.com/videoasset_images/scam2003thetelgistory_marathi_2nov_landscape_thumb.jpg"
+                            style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img class="slides"
+                            src="https://static-koimoi.akamaized.net/wp-content/new-galleries/2023/02/the-night-manager-review-001.jpg"
+                            style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img class="slides"
+                            src="https://m.media-amazon.com/images/S/pv-target-images/73771f455160a6b66e9adab0086d02b85723f1c171cb4edf71d69f184f09b2a6.jpg"
+                            style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img class="slides" src="https://wallpapercave.com/wp/wp6042723.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img class="slides"
+                            src="https://m.media-amazon.com/images/M/MV5BMTA5Y2FlNzMtMmJhZi00OGJiLTg0MjMtMjVhMjFjZDE1ODkxXkEyXkFqcGdeQXVyNDY4NjAxNTc@._V1_.jpg"
+                            style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img class="slides" src="https://static.toiimg.com/photo/msid-78586214.jpeg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img class="slides"
+                            src="https://origin-staticv2.sonyliv.com/videoasset_images/rocket_boys_15aug_multilang_landscape_thumb.jpg"
+                            style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img class="slides"
+                            src="https://origin-staticv2.sonyliv.com/videoasset_images/college_romance_hindi_multilang_5sep_landscape_thumb.jpg"
+                            style="width:100%">
+                    </div>
+
+                </div>
+                <br>
+                <div style="text-align:center">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+
+            <div class="title">
+                Top Web Series
+            </div>
+
+
+            <div class="content">
+                <div class="containermovie">
+                    <div class="grid">
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button1">
+                                    <img src="https://www.milesweb.in/blog/wp-content/uploads/2021/09/10-insightful-Business-Growth-Learnings-From-Money-Heist.jpg"
+                                        alt="image">
+                                    <p>Money Heist</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button2">
+                                    <img
+                                        src="https://m.media-amazon.com/images/M/MV5BMTA5Y2FlNzMtMmJhZi00OGJiLTg0MjMtMjVhMjFjZDE1ODkxXkEyXkFqcGdeQXVyNDY4NjAxNTc@._V1_.jpg">
+                                    <p>Aspirants</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button3">
+                                    <img src="https://lehren.com/wp-content/uploads/2023/11/money-heist-prequel-berlin-released-date-confirmed.jpg"
+                                        alt="image">
+                                    <p>Berlin</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button4">
+                                    <img src="https://i0.wp.com/thedigitalpopcorn.com/wp-content/uploads/2023/07/half-ca-tvf-web-series-review.jpg?fit=560%2C241&ssl=1"
+                                        alt="image">
+                                    <p>Half CA</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button5">
+                                    <img src="https://m.media-amazon.com/images/S/sonata-images-prod/ATV_IN_mShop_SuperHero_SchoolFreinds/c1ac23b2-19b9-46a4-92ad-94c3e322ea36.__SX800__SY450__QL60__._TTH_.jpeg"
+                                        alt="image">
+                                    <p>School Friends</p>
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button6">
+                                    <img src="https://m.media-amazon.com/images/S/pv-target-images/302964d62c2c5a4b3e04135fbc88a26da795ed51d5f5c8643f45435c8b8a9054.__SX340__SY192__QL60__._TTH_.jpg"
+                                        alt="image">
+                                    <p>ISHQ Express</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button7">
+                                    <img src="https://static.tnn.in/thumb/msid-107562811,thumbsize-99748,width-1280,height-720,resizemode-75/107562811.jpg"
+                                        alt="image">
+                                    <p>Crushed</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button8">
+                                    <img src="https://d30ny7ijak9wq4.cloudfront.net/s3fs-public/maharani_1.jpg"
+                                        alt="image">
+                                    <p>Maharani</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button9">
+                                    <img src="https://images.ottplay.com/images/scam-2003-the-telgi-story-275.jpg?impolicy=ottplay-20210210&width=1200&height=675"
+                                        alt="img-9" class="image-item" alt="image">
+                                    <p>Scam 2003</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button10">
+                                    <img src="https://origin-staticv2.sonyliv.com/videoasset_images/rocket_boys_15aug_multilang_landscape_thumb.jpg"
+                                        alt="img-10" alt="image">
+                                    <p>Rocket Boys</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button11">
+                                    <img src="https://origin-staticv2.sonyliv.com/videoasset_images/college_romance_hindi_multilang_5sep_landscape_thumb.jpg"
+                                        alt="image">
+                                    <p>College Romance</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button12">
+                                    <img src="https://wallpapercave.com/wp/wp6042723.jpg" alt="image">
+                                    <p>Kota Factory</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button13">
+                                    <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202203/Untitled_design_-_2022-03-22T1_6.png?size=690:388"
+                                        alt="image">
+                                    <p>Gullak</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button14">
+                                    <img src="https://static.toiimg.com/photo/msid-78586214.jpeg" alt="image">
+                                    <p>Scam 1992</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button15">
+                                    <img src="https://m.media-amazon.com/images/S/pv-target-images/b7a372507c1a7cd3ab438d3e6f06a077f21afd827ea3f777ef4ada8b333aaf95.jpg"
+                                        alt="image">
+                                    <p>Flames</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button16">
+                                    <img src="https://static-koimoi.akamaized.net/wp-content/new-galleries/2023/02/the-night-manager-review-001.jpg"
+                                        alt="image">
+                                    <p>The Night Manager</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button17">
+                                    <img src="https://m.media-amazon.com/images/S/pv-target-images/73771f455160a6b66e9adab0086d02b85723f1c171cb4edf71d69f184f09b2a6.jpg"
+                                        alt="image">
+                                    <p>Panchayat</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button18">
+                                    <img src="https://phantom-marca.unidadeditorial.es/1dae96dc691d041105915b4915754bc8/crop/0x0/1597x899/resize/828/f/jpg/assets/multimedia/imagenes/2021/10/01/16330974723192.png"
+                                        alt="image">
+                                    <p>Squid Game</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button19">
+                                    <img src="https://images.yourstory.com/cs/210/3fb20ae02dc911e9af58c17e6cc3d915/Shahid-Kapoor-and-Vijay-Sethupathi-Starrer-Farzi-Web-Series-Poster-1676018707048.jpg?fm=png&auto=format&w=800&blur=500"
+                                        alt="image">
+                                    <p>Farzi</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button20">
+                                    <img src="https://data1.ibtimes.co.in/en/full/704688/ali-fazal.jpg?h=450&l=50&t=40"
+                                        alt="image">
+                                    <p>Mirzapur</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button21">
+                                    <img src="https://m.media-amazon.com/images/S/pv-target-images/ea035e1ebcf874d27ac4c240f6ed837d6ec965112a74b90ba017ff55ce53fe2f.jpg"
+                                        alt="image">
+                                    <p>Hostal Daze</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button22">
+                                    <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/1090/1611090-h-c1c086bd6f3c"
+                                        alt="image">
+                                    <p>Sultan Of Delhi</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button23">
+                                    <img src="https://www.thestatesman.com/wp-content/uploads/2023/08/A-poster-of-Made-in-Heaven-Season-2.webp"
+                                        alt="image">
+                                    <p>Made in Heaven</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button24">
+                                    <img src="https://i.ytimg.com/vi/n9Jkqc8jPlw/maxresdefault.jpg" alt="image">
+                                    <p>Taaza Khabar</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button25">
+                                    <img src="https://miro.medium.com/v2/resize:fit:1358/1*t4XH3kmVEc3HI0rz97Kj-Q.jpeg"
+                                        alt="image">
+                                    <p>Hostages</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button26">
+                                    <img src="https://www.iwmbuzz.com/wp-content/uploads/2020/03/review-of-mx-players-bhaukaal-a-mofussil-bloodbath-2-1200x675.jpeg"
+                                        alt="image">
+                                    <p>Bhaukaal</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button27">
+                                    <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/6195/1516195-h-3b4dc079b26c"
+                                        alt="image">
+                                    <p>Saas Bahu Aur Flamingo</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button28">
+                                    <img src="https://m.media-amazon.com/images/M/MV5BZWM3ZjRhZmEtMjNiYS00MDY2LWE1ZmEtZjIyMDA2MGY4YWJjXkEyXkFqcGdeQXVyOTI3MzI4MzA@._V1_.jpg"
+                                        alt="image">
+                                    <p>The Railway Men</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button29">
+                                    <img src="https://feeds.abplive.com/onecms/images/uploaded-images/2024/03/28/2117374d9a711d7efdf4eac16be332f41711596144202775_original.jpg?impolicy=abp_cdn&imwidth=1200&height=675"
+                                        alt="image">
+                                    <p>Heeramandi</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button30">
+                                    <img src="https://qqcdnpictest.mxplay.com/pic/263122ff620b8e608aedf7269f05d9ae/en/16x9/640x360/test_pic1666161953734.jpg"
+                                        alt="image">
+                                    <p>Indori Ishq</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button31">
+                                    <img src="https://qqcdnpictest.mxplay.com/pic/3f8823724dffc55b5db8e3f1e1f2a440/en/16x9/640x360/test_pic1586501666544.jpg"
+                                        alt="image">
+                                    <p>Operation MBBS</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="scale">
+                                <button id = "button32">
+                                    <img src="https://m.media-amazon.com/images/S/pv-target-images/b750d25b2237a7f54ff31d61998f3a7f8a9cbc7c995379bd7674e8153f32d760.jpg"
+                                        alt="image">
+                                    <p>ImMATURE</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="footer">
+                <div class="left">
+                    <div class="m">
+                        <h1>Streamer</h1>
+                        <ol>
+                            <li>For You</li>
+                            <li>Movies</li>
+                            <li>Web Series</li>
+                            <li>TV-Shows</li>
+                        </ol>
+                    </div>
+                    <div class="l">
+                        <h1>Support</h1>
+                        <ol>
+                            <li>Help Center</li>
+                            <li>Terms of User</li>
+                            <li>Privacy Pollcy</li>
+                            <li>Content Complaints</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="right">
+                    <h1>Connect With Us</h1>
+                    <div class="link">
+                        <div class="circle">
+                            <a href="">
+                                <img class="image1" src="instagram.png" alt="image">
+                            </a>
+                        </div>
+                        <div class="circle">
+                            <a href="">
+                                <img class="image2" src="facebook.png" alt="image">
+                            </a>
+                        </div>
+                        <div class="circle">
+                            <a href="">
+                                <img class="image3" src="twitter.png" alt="image">
+                            </a>
+                        </div>
+                        <div class="circle">
+                            <a href="">
+                                <img class="image4" src="youtube.png" alt="image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footerbelow">
+                <div class="copy">
+                    <h1>Copyright © 2024 MOHIT Media PVT LTD. All rights reserved.</h1>
+                </div>
+                <div class="logobelow">
+                    <img src="logo.png" alt="image">
+                    <h1>Streamer</h1>
+                </div>
+            </div>
+        </div>
+        <script>
+        //image slider
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 2000);
+}
+
+
+
+//player
+document.addEventListener("DOMContentLoaded", function () {
+    const videoLinks = [
+        "https://imdb-video.media-imdb.com/vi2646786841/1434659607842-pgv4ql-1639145170138.mp4?Expires=1718087893&Signature=dW9HYV1RpXrU0XZf~skmJifzGNWN4zDcXfr3~73WSteY37RZFJ0dB38Ko4NoFUgLRcftuDiGubCrzSQR3STnrZNebwfxpbrvgruZStuFLuEZbW2ielT6xd5pf1bEnS68R4NI674foKEtCIEZE7u8j67WTQolN5DApW1AGLvyrUWmkrEN8wX4TXZHf93IdEYQnXwERv~UnV1GqvoR5KWTd0Om0pIplnCrAF2tvCnmZ3iQUWYevNPM0Uc~KBKCSzhjl--rUCQHP00hyzM9OVqvSvL7iFLrw5jOplU3wqCn2vHEB86pY3fblD~GO-HRzpVOO0DEYNmGbhMAjAZ3Nh-Rsw__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi20039449/1434659607842-pgv4ql-1698324439498.mp4?Expires=1718088663&Signature=bgvoxCpg97gHFDs-iE~0i2tICQOiTQARqBvtOPkmCMTHgrbuCajIqSwGaU5BGcEB3IiHdVLYW81IOJ3V-T1AFNimcWA~FmHC9jajZm71xQrRq~VXcnks~KiTfIa132mVBIbTz~lmNrb2qwvWYF0OUWjoJJNuXnpg396WjoxWZfVuxypPv0CkcrzYm4629io35jzIwyIrrO5Rhc06245~Ha4oJL5vWaVyeJNeOKtZ74gGpwnMCxBzHx6fZ0eUJjLL8q7KlAP0wRzJRyqauAAZ4PGnlff5wOMpfAc4TNNH0O0mTGLWsxy39nExj8XTmqxJSTJ3Z7F6YyB8RQxMySpRFg__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi1226295065/1434659607842-pgv4ql-1701186341197.mp4?Expires=1718088715&Signature=CvWOKRvehMMAr4v~xaacdwuZPsYRiMwe5NCldMW09YiyaldyUMUyi5jLeBEZDBOjIA4T~dTSG2pNq0IfU~2JaLTbE0Y5tia1a6WmmjwynEQLw9SYF~nAX6vpdsuPrVfYJKpTZjEtBAh-ziHFHGwvvI8UoYby9RkW~cLKnAunUQYYW~JD-C3FsMiDN~hpWt5uiBnEgJxMxeiS4uzg47ZXXGjYoudwZj5nHJPSzx~MhkvRoXAh4zN5DsteZxFPVlkdZcc~7EoVtI3mQzvLO1FJZg06XVv02z1j3Y-KYqQPizxN1PIIBdAoigtDpbclvYkTpl9ufAdrgIYqOZhuGcYEFQ__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi3549808409/1434659607842-pgv4ql-1689789669769.mp4?Expires=1718117382&Signature=KD6W7zoJKGVnCmoOY6P1~43uEWA8PIpcZsvWYy325Fp1b5k6buCWoSQ3mnCdgWHwDmqcCmplLiobZ56rEa2EUQiCYDMbAkxKdNnIXDvgH6Q2vCH632aIMJSf77P7eNOKMhjRg7etN142~56JZ3crnV2Zc5o7ryyPCLvyZd4BsdMMPcu-lQTL4qIpmWOFECHNWryk6-jgce7sboRsVmLU3IIDVHM6eQSQt9k~jjt9j8ALzsKtOHaWJw52AboapBb4o9EZfkyZm6YAZSbzPTFtjVGyiPw9R8fQTMYQrZkqQIfQO8yRLwCDgLQyPYagQE7ULBJw0pZlsDBOtfR80c1ERA__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi922076953/1434659607842-pgv4ql-1692711963619.mp4?Expires=1718118860&Signature=RaCdVITF~eeJzVNaqdGV7uV221MkMzlC5kDRpJzVADVy9WhfD8A77nWZKPt3mFUIsBpFnr5NHSUlGkvfLYXt4iX-nNqgC1nxFq0pJS6JMgopFpiilfgbp51q3ga46WPbcLCEv0ubVk-k7c3xUPGCPVvnPJQc~Qqldy8WmitdQ-00C9znM-sb4M3O5bvGA53JppWDraWadPvMS5Jis-YXicybF-OlSUGPn5Y6uxnw1ylNVo6GRxsKAa~s-BaISDO4bJ8GJ-fGyyOH5isUIGyR5FLRBrYQO~rs0QAciKN7jjXXIL4Ure11Ecvalmz3UWAjgU8JjbxG4N-o1Ado4zeDJg__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi1891942937/1434659607842-pgv4ql-1656141174242.mp4?Expires=1718119157&Signature=Rpp~85yKlyZZmx75V9Y9iGXEGCWVoDf~nDCqJqFYFbsLCcV4fzacY3BhuBQAD7-4wZESpYGtcL2fmNyDKiYDOnbzakWeSezDlDjx-qOx7Fs7nOyuePpFtjZtGJiV6PuHrIoqbWTy49Ho4mhVIWFf5CacyRwwuKJp7b3ZR-0YoptrKRr1cWODxRcgm0HRKc1ZlqCvwynMzDtpgTxo7cZt5~D1MvKV2VVoH5bYv1mXT4e4G7Ko6nXbOo1whpPMSaC-SYXg1B3lVuRC0lqwlk4lcb1G7L0qaOftC2SNQVoqGfCXOpJd-gK5B0DYhgW8AKQi4jHKMnBgEXbccB191QCoJA__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi2755708697/1434659607842-pgv4ql-1706858696237.mp4?Expires=1718118656&Signature=sdE462xAnon0unQ8znlli~mC6-~tgoZzra-Ji2iz4RdDwhF7a7krTJxbaCJRslVKcLbp6N6Vce397QAJt0fKGvsrYmwrYUXHlIdoLOFPlUxjGIaHljRSSLeAgT1ux-3Qlt5chjMu0G64w3fY5SbWX5p12ept3YkyoLD1863~40DJXIzTYOdXsR1vLz4i0gv4Dx4LjaWefvwCAy2cwgE1W1TtCJ-VV2qooQb4MTt6AKCQuPYQa8lza~KyQqGIXVix357mVAiXXM67vKOM3-JvZJH4r17VY2rokAMCfAMmGd7qAaBODmDVkvhNYcbiCxIT8iKbg0c9lLXNHIQQMEPf~Q__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi2679555609/1434659607842-pgv4ql-1708413719236.mp4?Expires=1718118682&Signature=JQEOszl~mVzhOVpDqW9y~2eqfcHenkCFawTlgsTkzLqUuqSo9LFM1pSuoaKAM0kQ4BYByZH-Fj2QHcN5XgFZQsbjUdCzWeccYq7zKp-uXtxFHvfDIJEfriOCCaOvC6s9VylYLo15ouVgVzakoFytEn~qxMnRveF~vjzyVFnj3rcozNCopEbCQRaclq3M8XCy0WwCzpB8mnBkUhvpHmhcxDJa5b3XKTMHbMKZ8C66~azBrt0ObYMOMcIjv5JrdGmhn~LJ3GYtY2DEF3ym0DC18Ts1bkjKvGmwCMJarOj9K0~NF2V1zpGWjrt0s-XZXXd0BPp63N7oESnCz70iLkmKqg__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi3742746393/1434659607842-pgv4ql-1701104043008.mp4?Expires=1718119373&Signature=fMv74kj8QDS4qBZoKU5yMavQ~Oyie~rRM2JcW2ZDX-5dFGTPtD-UesvYAbrtaHSshULXZpN20Mq~eb404Ut7cDDnGxUSwRVrNwP2Q0po24Z4xU292cBFccykGXxXaClNn5h2iZjATtqBnpNrs2ybn89n0NNaP9rZVDMfLx0zkqtUL0viEjRGXucOPPKDy7YQQHq4IlXCDgwDYZ5fhuIEivk7TiHSvXq4Yf3oLBjYE8sx6k6xe6ynsBl~-7XvGkwvU~CAbe8skFuwTtmwszkwbPmy9zfV6mVqMYlrjm6kJwYs-cFDlmWEHpWJ8UrX4nG2rIBGsHNVLfth2S7jXPQGgA__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi1311818777/1434659607842-pgv4ql-1678168513431.mp4?Expires=1718119405&Signature=ENkad68cZFBzqtWLLE5hIT7FKK4lLpKNEVxWXyX0bk05QV~IjnA5p6LMhh71e91HsM8sr9MgtWdJ33ZC4NAmt-WuTD0E19qL27F8nLoYxck43fzXfnSC2YXp8RV7rMJ-Q2e2twRmkJ7wNtV4eFn5j2XD9vuhXiMCPR9OqXuOmxJJxE7BYc7UbBW5L2MbROXi7ZAXecF4-m2L9wYHd-wLnl7ZGAE3XyAeDpjkH1HRzzzpmOFYN2wdPvBfBx4ft0wTN-V4gxfXHK1t34vypNJBblTmws4YDdv9dy40M7tg0PCAervN9B6xh8qc8QWZlKs7C9EUZ3EdvSi0qCaTLMw-Rw__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi1311818777/1434659607842-pgv4ql-1678168513431.mp4?Expires=1718119405&Signature=ENkad68cZFBzqtWLLE5hIT7FKK4lLpKNEVxWXyX0bk05QV~IjnA5p6LMhh71e91HsM8sr9MgtWdJ33ZC4NAmt-WuTD0E19qL27F8nLoYxck43fzXfnSC2YXp8RV7rMJ-Q2e2twRmkJ7wNtV4eFn5j2XD9vuhXiMCPR9OqXuOmxJJxE7BYc7UbBW5L2MbROXi7ZAXecF4-m2L9wYHd-wLnl7ZGAE3XyAeDpjkH1HRzzzpmOFYN2wdPvBfBx4ft0wTN-V4gxfXHK1t34vypNJBblTmws4YDdv9dy40M7tg0PCAervN9B6xh8qc8QWZlKs7C9EUZ3EdvSi0qCaTLMw-Rw__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi2336866329/1434659607842-pgv4ql-1630344795523.mp4?Expires=1718118662&Signature=jSWRdZkobIsSiYABUGKAjyMn8qdv7cWmQe3aw8WGQkikjqqizyT7KVSWHOEWiEkLWGsSkIwmW6spoJYuqlFA4g6I3JPkfPn8gaf~c5UqiC8Abf5LVmPF6POjbKE4leD08phljzJwie5~RxQyccR06U~4gwiuKglmhQPlwPwSOLJ~cPW5~7H4R1Z8VnUirdjHx~p4TkOngvzVU9-dY-CTFnXbPFereUuysEDr3gxY8XqTmug6Rw6lfoMLTcQPn3PhNwd6ywyU0gMyqfMgRZmw-EgP4ucmEhHN64qKcq8v66vTIKxAJCgKZ1mAd-cuWruWU2ehbwZSsv7OvB-dbECL6g__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi2848310809/1434659607842-pgv4ql-1716968180321.mp4?Expires=1718118561&Signature=CcFxAyyDwwK~pICneXJKRjGkzcJOHgHCm6lE5pT1vsY3nsjcw7Qc0i-4roiq~zqhL7TgdK7GLURQKVOdA6~zA7w-2ncKFBpGnDcaV4CkeOfMBIGcnq5xBtRB6j3As9MAYpIoQd1iJ7iUelt5YvN9~DdbpvMCcQzKk5H~6WCA5RXDeVP7EbPRbB1Tljmssh18hRbDlfECP591M04cqln4FJOJz8hX4rDTa-cLk5cqi7q39xj8BkJef8dn9Z95e5hVTpUN-WllS3-4nN40dgKM31oMUmB81eSy0Ao5f5Hqk37FslsFHyIuO7c4yGRhvMeeRhLcIURwgPJ3g8bICQ7~yw__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi3437281561/1434659607842-pgv4ql-1603371768180.mp4?Expires=1718119248&Signature=KlXWc0y08EYlUR6KDiUacBm9AVmTeIx0u7TU2KszhPW8kvd2LtvZPhPIXItHiYHPSL3gaOaZG09p8-eaqF8mgaApWsK41x2sAGC9IaX6EaKe-URwC2MCFDzr8V-aA7gsuWsMAXlkAfGlzOcFcSy5LvlKjPBO3GppfmtL9~G674p27NOA4Jlvaq1Ud2jL2C0nfTbuvZUV40lK0drs1pzP07hVtIa9KY4UnTKfTGjjKLRxdLLnTKg70O-wAUzIMEuKIS6YjDiin2soa1JCy4EOH-d4MNvVe4kg8kQIXz-DGWhWToTSMId5klNz5Qu7EqTRll7VYQqvOvQzeWmRC7UFtg__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi588171033/1434659607842-pgv4ql-1703057990611.mp4?Expires=1718119481&Signature=l-bJSaAadeeHpy-Zvk3LBnduELtdG6fjbVOYD~Tp-JMb8DE0ZKz8sA-Ued4yXlaMkVapDCR6ZkjpqicXNIThlYkfXyDSKAD8OHkm1ryQLjhBLwJlMDOLHKOCeYRiZhxdLBmKfMtReFocxl8Wo0sqVluwCd3jx-SamXtx~P2uoA4BxTzEdDt1VLSJlZv86D81SbBCmbKP~QF0jZzgrQrEvQfaNvHw2sDtKV6o3eybR-PcBc4J2luGU5MnlDEF69Z8ksvXa53SWwYNEYKF2RMEl7COw5dXVuCt2g1UfO6rtMVBwU8~x~wmZMVLhSIfhIf79Ut~ixtKguv0smUic2Hp6A__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi2840380441/1434659607842-pgv4ql-1686226339251.mp4?Expires=1718122348&Signature=A~bOKSzj-YcL3MzcwlpKwgNUmwZ-LaS947jLPENFvSEcQejE-Q-edELKKJaUGCe8ABK6ihUT2r~WM3W8hFJpJV7It75ESL5g5F-zM8GfGvozxyRrZ6xrKPZltqky4dmNbb9O5BwUCrv4RzxlYHAp1ieN~yAebrAmAkbOnYVgF2ZG1HW67ijMSyeloyUXS5f9BbaKzEoMGHThkkifjS2j0c~pdYu9R0d7VCcmJiQQr5uR8lQ8gggBd3uBKhiVLi~LvX1F7KZkarev1Qu5dkX8LhSJ80gsSM6t3key7iDHRvTqDciQRrtIHg57LjAtnEiFK6thaFBT5Ap7PHLelIRGsA__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi2815936025/1434659607842-pgv4ql-1715750270766.mp4?Expires=1718122659&Signature=IH7isT21TGL9K~I4ZztfPKf4VONc9L0J5PBdoIVjh3Fqzf0gVbvuprmv0We8RXQZ1DNNwmv2jhF~aN-aREyCsapfK-gc7qxwdJpQGu4Q4MjXoGAsOsw6LeU3FJde6z-rIK1vYr~QwkE~KcM~TuC5Ww-iaNFvZBNbg188l0RCDncr8N22nEW6P7tNYi2losA0yuHk-x1YakoCY5-VDWxkeNdUFLm107ZPdRSKb-KI3T97xYMaMcyyuvQqAZW4M3KCCmasTtsQj77rSlTqzE9GQnDnrJdUVHXylRCOykcK0QkD4r6JtUk4E84zOAv0wemYrjLxS4zXi5u-wMMfZpS4eg__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi2427699993/1434659607842-pgv4ql-1631100525843.mp4?Expires=1718122539&Signature=odOEauvHU8ew20h8W9ZQGgkk5emBGo7Y~B9kFw3FEU4OxA9OoahPRP0QCdPMXj3MWKPwMYFDqmpHNQeS26A2wM-xcCV4PpFio2rb8X29SgBp-sdZh9njoJIGZgvnSsHLfejMOyhZdyu0vgjatjse-8D9cVZuM8WYN9c6M1jKhAp7kq3GzIOdeIEmmUaLt4JCesUDxFZtkebtVa3yZjqIEmy6QfOCfpaJmorwDd2uE28ukrTq2MAMGLVDSWRK7nnApLwIgamHwD089Vn02RO1G4y2x6JKfiuHgF7IrmYfVxMGTlgwf4XN7PbLKSkNX~KjiWwyGwYOIO8lXe0TPs36fA__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi2187445529/1434659607842-pgv4ql-1676274591487.mp4?Expires=1718122079&Signature=gtTWAhu5kRr3bnu5kBAfYTeSYLYFt6Wqq1Ay-q-98VLrAbFCpiXga80JkacLOxNmbrKWhLMec5Ul4vL6zzCgrgNXGxzf64W6yLpTEPnJx~qtIVE68siudbcRvJne7mp6SBOzXoqIwWdJulp6vDUHpXRaweUDNaQyyVT8bhULwti1Z8jEjRCAIjlmvrFIJY6g4qLH-D3xCs7hQw1hm6Z63BLSKO7immLQmss9Xii~juPoun2opP4BBVYnDGxYruaGhReEol6BUgzlzdOMwF0rI1dn5ilOiga4noA2KpPnYagAN4zQIvMdTEyoor8Fn4trUMkwWiDp~MLfpp77ygv5rg__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi595902745/1434659607842-pgv4ql-1601997273080.mp4?Expires=1718122242&Signature=PQNzQFKoUyVn9cSIw1FxCCADJPkDchvYWjT2H8HwdYLNK9~ezfYcGzCvDulBKartapgcmnQyBUXK-mcKgDL-roo~IuRABrmXJfDlCS3goigJdG7dnb3vYteLD2R9Kserg5mFSoF2aKIUqV6R1UNzDO62tOzbuoi0aOM~Lw7LmEyzSFadU7ukmCddQuw8uvJsXEG-ID~TpDn1KO-uhLa7LrpEnU92wfQtrRy5LyZogIfTIzJ0uoaSqaOfEMMHzIS1edTLXmB1cbnwcseVg8D07ZX8BKxpp3dsK2LiUxnll8vw8~0rGxy1gQrnbphKOHHxM2CPOADQDFv9NzZfMH-paQ__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi500352793/1434659607842-pgv4ql-1695378540758.mp4?Expires=1718122263&Signature=i~X7gi9ErCP5QI-1ZVrEEZtn5vgXPf4DUzYFJ4cwCPGFoaA-~sWJrOcoB3g3Rj0PUDMP~9~ylAHxBH6V8SkQAqceFWlk2dsU9lR0iWiM-LGXdizx8-f27ohDz9s1uUDkupbYjZCIjEp0kQHLKN2i7xeMhSFY~rVb3CriWZhK27ExltLpMI84N5DH9ZT~IEnpOacYceoNYEi9ppJQyc5pY6tQ470J7yzjpzwuVULaErXMdnhOGoGGZikUkzvGib~VBr2hSy2wDJeLE~3nc4Vsnww-VUkAAa9T7XXm0QGVrC6GlI3re0RL38NrwwcoGLlQrJpafxl8ppDec~mGUO6Qvw__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi517130009/1434659607842-pgv4ql-1695378866401.mp4?Expires=1718122763&Signature=UtVmhGa9LAFdY5EzWpE2Pbi0LFDZSlVChShlK5RMIFgR7Y5oVunelJ2uUJNrIvXfAUotEVuhzr~lf8wmf~5XaSzE8-tG4XQ7~Ug7WWXl32RWvcp~rAkIuzIgAfZCxQRp0MJNoYttr0syyw1NFKN5XU0gMbVZDr2u5Yq0m8onsf5gTFVvRwrXfOyBKJ4gp-3Svwe7k0KzP~cQCASgjq~vQUeFjXaTLLl9roMaF7w8j4Qef4dqoDYs8WhBSGSN4jMOTMcICltQRnEP2RSn3ggAJ4yt3CIlF4NDiDzuvBk~N3KxsAMLZNpPXaS59paj08HpAOAilAwiwLduFypd7RMs8A__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi2776680217/1434659607842-pgv4ql-1690901112361.mp4?Expires=1718122393&Signature=ZuxwZ51xG6-rSw7LTufbBUROwqeedcCtVohJ7qWS6gzefUwYYl8RV2QaNUeAzTAJIpo8TU66qylnzz5f6GFdQVHv~yk8O-nUm2PWAfjG3SE91k~EUAnAkSx50F1VUA6VyWBg9u6UkZI3rLTsTtkJm0HTND-E4Kd44LMbdn1EG96WZ8IhAhe8FE7PX1rUWCbOEY8WiLscPKu-NjcGHm2VB1evK0me-OmeF5YUtVs34HDskDHeDsXbTUyfuMvVAvEOFfSpktaUMb09yqVgeapg67xXw7Ff20GgHukSXzQ5hkKw7HiVMMV1muen3QWPh-vycCrpaZM7p4bMcBXyErCOew__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi618841369/1434659607842-pgv4ql-1670916155729.mp4?Expires=1718122952&Signature=TLWmpwmkQxounMw9dGG~eS7iX6LKcAGdHHRqg~lIAu4EsPMNtCXJnyhru3uWK-RsO1N9zYyVVvzz52N1NVbvjc1FZSyrfVhd45N72rw-SDWNQuyOIG2X3yhHuNGhu6RhWIoFGtfyx8HWdU7nqM9T1SyWBLMscZsMJmJEjSUtkLdy~qhD7VTHvmrl2NG9FSR~EzXCYX8xSsQDQNp~5WxZAzfuRGuDFFtRZaD2q9IVXuCx6i~IOVHgWh8Bsk1jE1oNBMvxBF90QZQCSFpumfxxqMACQ1RFR--cKeTHyUmBdmsVVwKva~cp1xc8eTy1M96iPHD31A8EdlVVB8B82Y0gbw__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi835238937/1434659607842-pgv4ql-1559555711865.mp4?Expires=1718126654&Signature=Bx3R5ptRorT71W34-r2zeYLr2EWA5a7jF2c3TAXNrYVcUNPRhXt72Gg9X7ldcIfsaJ7U1~fENgckysnB0x0~Dl6lTW1Bv6LtCvp5Hczrn1CbuMrkitpkVHteVOLC-e3h9pRrvrzy3Cpoe6AkvfecsSQ42LOlA2rCy-3t3RLiaIb~26NLy95CiffIxyFVA4N1cC3rj~~L4Hz4xKNIlp15vwJFpIUhvf5VuhiD~w8rWnLpEHIBwiLCFK0TGKc53KxQT8ESQUTFIhWlgViqHcPxpisB2T8tHXfFr3aXCy0TbtBJqduaOpPYjOWyKh5dgcQ8NRQRS5maoDmx9Lv4fr0hxQ__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi1595720473/1434659607842-pgv4ql-1643308029117.mp4?Expires=1718122404&Signature=KqUJDjfWE0GlUvNg3JYSugocftgmwTW5IQovjkwgZSCNgUFuWMXXz6CjHqexSVnfaJyHqdKrtIbQTbpYE3tPieB0qSV-YQojveo5oCuTcepJl-mBA6lm62GxUDk7-boPn5cF9iwR7RmDc9L~06-1wIh8HByKPbnaFmK9EfGx2kHn5dzQSOmFb8oIhLJH6dXU5bxtodrAOVFoZtMmwBvcy87mke3Lp0F8WWqiIrmyNTa6-6wbNFJZWJmYpiiKKk~tnopZI0qqpyVHVlWrCY9m~J65e~XeJ0twnKjryx3EiIzVvW~bwEmFmmkg5nHvgQ~exNmz9sbziowVfCmMazJq9Q__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi293192729/1434659607842-pgv4ql-1682355156371.mp4?Expires=1718123005&Signature=H8jT8OCtpxpzdejxpbN8-nETRQ~xogk0GRhuIVED0hchdTzl67g8drRCScxtWDpdZeHdAPJ8KGmEVHFwBId3qp0XhHMv5nqyHg6txCh4v0ry~s9mfujjemd5dNgDk8wxx6nVE~ZjVMw6aELic8UkKzBeFfFU1faqGDzQc9~0bd269SUQYtH94HFrdfQTWXWMYsmO6GGUSRdvR3fiz-Ts3540OfvzlOuZNUw9TUI3-zc0peoT7WEJy14x-IxjJ22rMA~ZDMNUm3dC7MrU0jcLmSKqYDKWxuqTu3j-anNymkB8c8VPKIo4TqXOg9LmNE2XTYyDvTUgjhBI4K4~UAT~dQ__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi2956707609/1434659607842-pgv4ql-1699280215083.mp4?Expires=1718128768&Signature=NFDi7O71tLpbb86MFuGUBjQqjh0UMc-YRFhsJsD-V1nTaETMh1vhC4bYDgzZ8bzPsSV2KqMEHIrISfsSOGWt~IiSU-30d1zSkWQ36pUiPNyQdmmsmxHbW9106GqWm7JzOkh-WR-VMd5pHAXVvBYMzDG5MynvaraNhPKFHjADlfGP2JiDDDl~S2TegmORE9ZTXBqSjqFvvpj66C1dMhRNgdmL2lKzvBy8uJv~b4Mehj3yNrMKNSErr8MORlbx8u6pZ~-QVCBiFmNXfyDnFxvQ3Ay5PrrpVr1EzCKQch7JOeTIENLlk0XoJ9GXdCXph8Zj4g-Ri41W8MW6n3IRQlJLdg__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi351389209/1434659607842-pgv4ql-1712670843580.mp4?Expires=1718128096&Signature=m~atF5UlGc8VO7y~gc-ef41H7hENpLRrzVCNjEk4bRAo~uKXXtkk5cqvPq9DCUxbl0UbKj9vZY~bebngtNu1JGnvh60y6HnT1sTfgFxwEKWzbWeaw1671iK0jeQ8Mby74HP95k6vSZPzIypUNdSGlqG87P5lSJiu0qthNGoFUSmnl9xo0MmoIcuHiiKms7Xv1l1ZxRAPTpqMLsS1UERB3WqyoNh3P4Wf4~-CBEY-0TeVJxzv7EVs7gRT7PsG9qavFDNmUaY4dv0E0z8g0c7peqaY7s17C0O-rTOqXcdu1zMfAgjsp6qs3MdEHN13zfFQ4N0Zjfa~S-TYrRYSQZdHAw__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi4013211673/1434659607842-pgv4ql-1622439964089.mp4?Expires=1718127720&Signature=ps2s-sKosJDlN9HH1vMRDnsjVTpPpy9mWQazPqUzRyBYjL8Xk4VejSHkHYDFDp29BCOjKa54lo~Dy~Dp308xKxQhkaAauRHAJL6IXXr3vPQeBhPXsDogojRl93y6IYd1g-tl4Yc0L9ZsQYBzRw64PXFizLly2Gx~dvG1YNuLbmWblG6ltyZTy3c46RUTYSMYnna7jAbCluiIodM5B6nAVrFvmHp1NAttxo0dDKY0T~LaPZAqbR~2WVpMYgqq1dZ5W56pLz1oJkro3yrMEvD6t0NWzVfi~G3TxrDKfvBpKIN1fWAUPNxRTq3JLW8nQg9GdBpZk5uEaT7lu1oCQsVoIA__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi2454634265/1434659607842-pgv4ql-1582132359370.mp4?Expires=1718128853&Signature=BcgRxUgiwGX8AgjxIZvzck0UxFkLPtpB9GSn2sTxzT6xfHfCx-5MSh7AKCRg6VvKQVViZaskA2rHoboFP6z8C~KBMZXuUTNII975DeQo2c1Mr7X2mSlRgymOhgP1x-N8JywH~n-chUdCYF0t1s-5gSdfi19NpolsEmYXD08xxIQR-raNisFAxOioHjcBcZ-RwGDCNU8NPwPPd7SyTBPt2insycNP8S3~TiH3LVZC3MaeMn9mv43SGXrKBWXzDC0PX9CCPQilk7bMqrM-X-nm~lnE2cegsPWtByREzKCG-6Nnos4Fhj4HIGSy0K0oW8oWSuptthb9v0llOJPTtchwJw__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA",
+        "https://imdb-video.media-imdb.com/vi1292289817/1434659607842-pgv4ql-1702380400072.mp4?Expires=1718128861&Signature=lctnED89qR1w~Y8VaxV-ubNCsotzMv2SfcXkbzy-TD1lcgNeTSOY~HqRgJTuS3zCFG1NgB-xEhzw0KnS0jXbIHLzuTOBX5XqWlXnPZcQNibodd157x-YUwBomEQdyQOUFwJIJjoGTk9-65834dwJ5TFSblm9L7sDT4xNZd1QQJ9Bfr87v4dG1FZ~x877rf2rl99rNBn5Kbe0TYp0MbQ3UEPs3FdqteMiJjjzUc3hcihxSsZ~ErIhBIRrn~P2UmisacunMjNmONVpNmHsOszophy565kiL3lEqR2fhLN5GxeGbQ03ty6IQq~QuCIEKcjsbVdl5rj1~nD3fXU~UavwHQ__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA"
+    ];
+
+    const videoNames = [
+        "Money Heist",
+        "Aspirants",
+        "Berlin",
+        "Half CA",
+        "School Friends",
+        "ISHQ Express",
+        "Crushed",
+        "Maharani",
+        "Scam 2003",
+        "Rocket Boys",
+        "College Romance",
+        "Kota Factory",
+        "Gullak",
+        "Scam 1992",
+        "Flames",
+        "The Night Manager",
+        "Panchayat",
+        "Squid Games",
+        "Farzi",
+        "Mirzapur",
+        "Hostal Daze",
+        "Sultan Of Delhi",
+        "Made In Heaven",
+        "Taaza Khabar",
+        "Hostages",
+        "Bhaukaal",
+        "Saas Bahu Aur Flamingo",
+        "The Railway Men",
+        "Heeramandi",
+        "Indori Ishq",
+        "Operation MBBS",
+        "ImMATURE"
+    ];
+
+    const videoTexts = [
+        "To carry out the biggest heist in history, a mysterious man called The Professor recruits a band of eight robbers who have a single characteristic: none of them has anything to lose. Five months of seclusion memorizing every step, every detail, every probability culminate in eleven days locked up in the National Coinage and Stamp Factory of Spain, surrounded by police forces and with dozens of hostages in their power, to find out whether their suicide wager will lead to everything or nothing.",
+        "Aspirants is a story of 3 friends - Abhilash, Shwetketu(SK) and Guri. The story revolves around the past and the present time where the past captures the struggle and the drama behind the making of UPSC CSE aspirants in Old Rajinder Nagar of Delhi, while the present talks about the aftermath. It is the story of three UPSC aspirant's journey and most importantly - their friendship besides all odds!",
+        "Back to his golden age before the events of Money Heist, Berlin and a masterful gang gather in Paris to plan one of his most ambitious robberies ever.",
+        "Two CA Aspirants from two different ends of the spectrum of the course, Archie and Niraj embark on the journey of one of the toughest courses and face the obstacles it has to offer.",
+        "A slice-of-life show that explores the lives of 5 quirky school teenagers who've just entered 11th Commerce, as they navigate friendships, heartbreaks, peer pressures, more importantly figuring out who they really want to be. All this in a society that finds it difficult to cope with the fast-changing Gen Z world.",
+        "The love story of Aarav and Tanya who meet while boarding a train to their hometown. What follows is a cute love story with the duo entangled in mutual, yet unspoken feelings for each other without any pretence, judgement, or any inhibitions. While Aarav develops feelings for Tanya, she does not reciprocate. Will the two reunite or Aarav be left heartbroken is what needs to be seen.",
+        "Samvidhan a.k.a Sam and Aadhya, two sidekicks, have always lived in the shadows of their popular best friends and gone completely unnoticed in Lucknow Central Convent school. Until the two of them finally take notice of each other, albeit under awkward and unusual circumstances, and a surprisingly easy friendship begins. For the first time in their lives, they feel like they belong. But will falling in love be as easy, and for how long can two sidekicks remain heroes of their own love story, before insecurities, changing dynamics and growing pains get the better of them?",
+        "A political drama set in Bihar of 1990's. With its caste arithmetic, traditional satraps and the emerging voice...will an illiterate woman Rani Bharti (Huma Qureshi) survive this? Rani Bharti (Huma Qureshi) is a homemaker and the wife of Bihar's chief minister Bheema (Sohum Shah). All she cares about is her house and her husband. She wants to pack her bags and go back to the village after her husband resigns from the post of Bihar's CM. But her life takes a turn when her husband and Bihar's CM is made to announce the name of his successor. While his party members look excited to hear who has been appointed, he makes Rani his successor, leaving everyone surprised.",
+        "Born in Khanapur in Karnataka, Telgi became the mastermind behind one of the most ingenious schemes in Indian history that spread across multiple states and shook the entire country.",
+        "The story of two extraordinary men, Dr. Homi Jehangir Bhabha and Dr. Vikram Ambalal Sarabhai, who created history while building India's future.",
+        "Three best friends look for love, laughs and some lifelong memories while attending college together.",
+        "Dedicated to Shrimati SL Loney ji, Shri Irodov ji and Maanniya HC Verma ji, 'Kota Factory' is TVF's latest original. India's first 'Black and White' show highlights the problems present day IIT-JEE aspirants face in their day-to-day lives.",
+        "What do you expect stories from a small town in the heart of North India to be like? Filled with shades of grey, petty crime, sorrow and stories of revenge? You couldn't be further from the truth and Gullak will show you how. Set in quaint by-lanes in the heart of India, Gullak is a collection of disarming and relatable tales of the Mishra family. Join Santosh and Shanti Mishra, their sons Annu and Aman, as they savour the many flavours of a small-town life with a smattering of humour, wit and of course, ladleful's of love.",
+        "Set in early 90's Bombay, Scam 1992: The Harshad Mehta Story captures the meteoric rise and fall of Harshad Mehta- the flamboyant big bull of the stock market. When feisty financial journalist Sucheta Dalal exposed him as the man behind India's biggest financial scam of the time, it shook the nation.",
+        "FLAMES #PadhaiAurPyaar is the story of a young romance unfolding as a chemical reaction. Head-of-the-class Rajat falls for Ishita, the new girl in the tuition centre. Rajat's BFFs Pandey and Anusha's friendship is turning into a relationship. The friendship equations evolve in this teen romance's first season. This web series takes you back to the time when everything seemed innocent--when the idea of spending time with your crush meant helping each other with homework--the rosy teenage days when finding love and topping exams were the only aims in life.",
+        "Follows Shaan Sengupta, an ex-soldier, who must infiltrate an arms dealer's inner circle to bring down his empire of war.",
+        "Panchayat is a comedy-drama, which captures the journey of an engineering graduate Abhishek, who for lack of a better job option joins as secretary of a panchayat office in a remote village of Uttar Pradesh. Stuck between crazy villagers and a difficult village lifestyle Abhishek starts his job with the sole motivation of getting out of there as soon as possible, for which he even prepares for CAT.",
+        "A story of people who fail at life for various reasons, but suddenly receive a mysterious invitation to participate in a survival game to win more than 38 million US dollars. The game takes place on an isolated island and the participants are locked up until there is a final winner. The story incorporates popular Korean children's games from the 1970s and 1980s, such as squid game, the literal translation of its Korean name, which is a type of tag where offense and defense use a squid-shaped board drawn in the dirt.",
+        "An artist who gets pulled into the murky high stakes of a con job and a fiery task force officer on the mission to rid the country of his menaces in a fast-paced, edgy one-of-a-kind thriller.",
+        "The iron-fisted Akhandanand Tripathi is a millionaire carpet exporter and the mafia don of Mirzapur. His son, Munna, is an unworthy, power-hungry heir who will stop at nothing to inherit his father's legacy. An incident at a wedding procession forces him to cross paths with Ramakant Pandit, an upstanding lawyer, and his sons, Guddu and Bablu. It snowballs into a game of ambition, power and greed that threatens the fabric of this lawless city!",
+        "Four naive and vulnerable wing-mates (Ankit, Chirag, Jaat, and Jhantoo) develop lasting bonds as they jostle hard to survive the first semester in a hostel. Peppered with absurdities, chutzpahs, clashes and debacles inherent to hostel life, 'Hostel Daze' depicts the grill that every Indian hostel-resident goes through.",
+        "The journey of Arjun Bhatia and explores a tale of greed, betrayal, courage and the ultimate fight for power",
+        "Made In Heaven chronicles the lives of Tara and Karan, two wedding planners based in Delhi. India is a potent blend of old and new. Tradition jostles with modern aspirations against the backdrop of a Big Fat Indian Wedding revealing many secrets and many lies. The supposedly liberal fabric of the upper crust unravels as the duo navigate through arranged marriages, dowry transactions and virginity tests.",
+        "A Sanitation worker, how he stumbles upon magical powers which leads to a riveting new ride for the man, and how it stirs his humble life.",
+        "Surgeon Dr. Mira Anand (Tisca Chopra) is scheduled to perform a routine operation on the chief minister, but the night before the procedure, her family is taken hostage and she is ordered to assassinate her unwitting patient in order to save her family, forcing her to make a decision. The story starts a week after season 1. Handa is still under captivity and the whole crew is about to move to Nepal to perform the bone marrow operation. When Handa tries to escape, an unexpected change of plan leads the team to take refuge in a dilapidated old mansion where shooting results in a hostage situation. When new players and motives behind the original plan is revealed more complex situation rises which Prithvi now has to overcome including saving his daughter's life.",
+        "When the deeply driven and newlywed, Naveen Sikhera gets promoted and sent to Muzaffarnagar, the ' crime capital of India' as the Senior Superintendent of Police, his peers and media dub it more as a punishment. Muzaffarnagar is ruled by two gangs, Mohammad Shaukeen Khan and the Dedha brothers who had systematically divided the land into two parts . With no witnesses willing to testify and the police seemingly fearful of wanting to apprehend the known culprits, Naveen charts out his three-pronged strategy. First, the Police force needs to start believing in themselves, second, have the locals rekindle their faith in the Police and third, let it be known to the gangsters that Naveen Sikhera wouldn't bow down till he makes Muzaffarnagar the safest district of the heartland. He includes his Meerut team in his operation, infiltrates his moles into the gangs, begins mobile surveillance, battles the media and politicians, wins the respect of both the locals and his very own Police force with his drive to clean the system. Taking the reins in his hands, Sikhera starts cleansing the city and undertakes numerous encounters leading to the destruction of the Shaukeen gang and making in-roads into the operations of the Dedha gang. This is the story of a man who left a cushy life and soon became one of the most feared and loved officers but with a price to pay, but then again every revolution is built on sacrifices and this one unfortunately had it's unfair share.",
+        "Savitri, the matriarch of a massive cartel in the lawless Borderlands, opens up a battle for succession to find her heir in a murky world of drugs and violence ",
+        "After a deadly gas leaks from a factory in Bhopal, brave railway workers risk their lives to save others in the face of an unspeakable disaster.",
+        "Arch nemeses Mallikajaan and Fareedan are locked in a battle for succession of Heeramandi, where courtesans reign as queens. The only hope is young Alam, Mallikajaan's youngest daughter. But what happens when Alam relinquishes power and chooses the love of one man over the adulation of many?",
+        "The story begins with amusing attempts of twelfth-grader, Kunal, to woo his classmate, Tara. Kunal finally manages to propose to Tara and their love story begins. After his schooling, Kunal leaves Indore and moves to Mumbai to join a Naval College. Soon his sober life turns upside-down when Tara dumps him for someone else. In no time, Kunal turns into an alcoholic and chain smoker, and without taking admission in the naval college, he moves to a weird rundown room in Darukhana, spending days doing nothing but drinking, smoking, and missing Tara. Later Kunal gets played by Tara once again as things turn up against his fate",
+        "Operation MBBS chronicles the lives of three first year students - Huma, Sakshi and Nishant in one of the best MBBS colleges in the country. Follow their journey as they navigate through friendships, hardships and medical student life.",
+        "A 5-episode coming-of-age story about the many first adventures in a young man's life. Dhruv is 16, and in a hurry to grow up. With a little help from his school friends, the wannabe bad-boy Kabir, and the color-blind but doesn't know it Susu, Dhruv sets out to woo the first crush of his life, the feisty, out-of-his-league class topper, Chhavi. Venturing out of their childhood, in their last years of school, the trio find their first drink, pick their first fight and mend their first broken heart."
+    ];
+
+    for (let i = 1; i <= 32; i++) {
+        let button = document.getElementById('button' + i);
+        if (button) {
+            button.addEventListener('click', function () {
+                handleButtonClick(videoLinks[i - 1], videoNames[i - 1], videoTexts[i - 1]);
+            });
+        }
+    }
+});
+
+function handleButtonClick(videoUrl, videoName, videoText) {
+    let body = document.getElementById("body1");
+
+    function changeContent(url, name, text) {
+        body.innerHTML = `
+            <div class="top">
+                <a class="back" href="https://mohitmehta60.github.io/Streamer-Web-Series/">
+                    <img src="back.png" alt="image">
+                </a>
+                <div class="logo">
+                    <div class="imagelogo">
+                        <img src="logo.png" alt="image">
+                    </div>
+                    <div class="name">Streamer</div>
+                </div>
+            </div>
+
+            <div class="video">
+                <video autoplay controls src="${url}"></video>
+            </div>
+
+            <div class="rate">
+                <div class="namemovie" style="
+                    color: white;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-family: 'Segoe UI';">
+                    <div class="title">
+                        <h1>${name}</h1>
+                    </div>
+                </div>
+                <div class="like">
+                    <button class="btn" id="green">
+                        <i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn" id="red">
+                        <i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="dis">
+                <div class="Storyline">
+                    <h1>Storyline</h1>
+                </div>
+                <div class="contant">${text}</div>
+            </div>
+
+            <div id="content-container" style="display: none;">
+              <div id="sessions-container"></div>
+              <div id="episode-list"></div>
+            </div>
+
+            <div class="footer">
+                <div class="left">
+                    <div class="m">
+                        <h1>Streamer</h1>
+                        <ol>
+                            <li>For You</li>
+                            <li>Movies</li>
+                            <li>Web Series</li>
+                            <li>TV-Shows</li>
+                        </ol>
+                    </div>
+                    <div class="l">
+                        <h1>Support</h1>
+                        <ol>
+                            <li>Help Center</li>
+                            <li>Terms of Use</li>
+                            <li>Privacy Policy</li>
+                            <li>Content Complaints</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="right">
+                    <h1>Connect With Us</h1>
+                    <br>
+                    <div class="link">
+                        <div class="circle">
+                            <a href="">
+                                <img class="image1" src="instagram.png" alt="image">
+                            </a>
+                        </div>
+                        <div class="circle">
+                            <a href="">
+                                <img class="image2" src="facebook.png" alt="image">
+                            </a>
+                        </div>
+                        <div class="circle">
+                            <a href="">
+                                <img class="image3" src="twitter.png" alt="image">
+                            </a>
+                        </div>
+                        <div class="circle">
+                            <a href="">
+                                <img class="image4" src="youtube.png" alt="image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footerbelow">
+                <div class="copy">
+                    <h1>Copyright © 2024 MOHIT Media PVT LTD. All rights reserved.</h1>
+                </div>
+                <div class="logobelow">
+                    <img src="logo.png" alt="image">
+                    <h1>Streamer</h1>
+                </div>
+            </div>
+        `;
+
+        const newScript = document.createElement('script');
+        newScript.textContent = `
+            var btn1 = document.querySelector('#green');
+            var btn2 = document.querySelector('#red');
+
+            btn1.addEventListener('click', function () {
+                if (btn2.classList.contains('red')) {
+                    btn2.classList.remove('red');
+                }
+                this.classList.toggle('green');
+            });
+
+            btn2.addEventListener('click', function () {
+                if (btn1.classList.contains('green')) {
+                    btn1.classList.remove('green');
+                }
+                this.classList.toggle('red');
+            });
+        `;
+        document.body.appendChild(newScript);
+
+        body.style.cssText = `
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        `;
+
+        const style = document.createElement('style');
+        style.innerHTML = `
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background-color: rgb(75, 75, 75);
+            }
+
+            .top {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: black;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Segoe UI';
+            }
+
+            .logo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 300%;
+            }
+
+            .name {
+                color: aqua;
+            }
+
+            .logo img {
+                padding-top: 15px;
+                width: 80px;
+            }
+
+            .login img {
+                padding: 15px;
+                height: 70px;
+            }
+
+            .video {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 60px;
+            }
+
+            video {
+                width: 90vw;
+                height: 60vh;
+            }
+
+            .namemovie {
+                padding-left: 9vh;
+                padding-top: 20px;
+            }
+
+            .namemovie h1{
+                font-size: 110%;
+            }
+
+            .rate {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .like {
+                padding-right: 7vw;
+                padding-top: 20px;
+            }
+
+            button {
+                width: 50px;
+                height: 30px;
+                cursor: pointer;
+                outline: 0;
+                color: #AAA;
+            }
+
+            .btn:focus {
+                outline: none;
+            }
+
+            .btn{
+                background-color: white;
+                width: 40px;
+                height: 30px;
+            }
+
+            .green {
+                color: green;
+            }
+
+            .red {
+                color: red;
+            }
+
+            .sessions {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 40px;
+            }
+
+            .S01 {
+                border: 3px solid black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 30px;
+                width: 80px;
+                height: 30px;
+            }
+
+            .box2 a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 80px;
+                height: 30px;
+                color: black;
+                background-color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Segoe UI';
+                text-decoration: none;
+            }
+
+            .box1 a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 80px;
+                height: 30px;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Segoe UI';
+                text-decoration: none;
+            }
+
+            .episode-list {
+                padding-top: 30px;
+            }
+
+            .episode-list-box {
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            a .Episode {
+                border-radius: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 5vh;
+                width: 80vw;
+                border: 4px solid black;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Segoe UI';
+                text-decoration: none;
+            }
+
+            .dis h1 {
+                font-size: 150%;
+            }
+
+            .dis {
+                align-items: center;
+                justify-content: center;
+                width: 80vw;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Segoe UI';
+                display: flex;
+                padding-left: 7.5vw;
+                padding-top: 30px;
+            }
+
+            .contant {
+                padding: 2.5vw;
+            }
+
+            a :hover {
+                color: black;
+                background-color: rgb(77, 242, 242);
+            }
+
+            body::-webkit-scrollbar {
+                width: 12px;
+            }
+
+            body::-webkit-scrollbar-track {
+                background: rgb(75, 75, 75);
+            }
+
+            body::-webkit-scrollbar-thumb {
+                background-color: white;
+                border-radius: 20px;
+                border: 3px solid rgb(75, 75, 75);
+            }
+
+            .footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: black;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Segoe UI';
+            }
+
+            .left {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .left .m {
+                padding: 30px;
+            }
+
+            .left .m h1 {
+                color: aqua;
+                font-size: 250%;
+            }
+
+            .left li {
+                list-style: none;
+            }
+
+            .right {
+                padding: 50px;
+            }
+
+            .link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .circle {
+                margin: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 70px;
+                width: 50px;
+                height: 50px;
+                background-color: rgb(75, 75, 75);
+            }
+
+            .image1 {
+                width: 30px;
+            }
+
+            .image2 {
+                width: 50px;
+            }
+
+            .image3 {
+                width: 50px;
+            }
+
+            .image4 {
+                width: 50px;
+            }
+
+            .footerbelow {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: black;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Segoe UI';
+            }
+
+            .logobelow {
+                display: flex;
+                padding-right: 50px;
+                padding-bottom: 50px;
+            }
+
+            .logobelow h1 {
+                color: aqua;
+                padding-top: 10px;
+                font-size: 300%;
+            }
+
+            .footerbelow .logobelow img {
+                width: 90px;
+            }
+
+            .copy h1 {
+                padding-left: 30px;
+                font-size: 100%;
+            }
+
+            body::-webkit-scrollbar {
+                width: 12px;
+            }
+
+            body::-webkit-scrollbar-track {
+                background: rgb(75, 75, 75);
+            }
+
+            body::-webkit-scrollbar-thumb {
+                background-color: white;
+                border-radius: 20px;
+                border: 3px solid rgb(75, 75, 75);
+            }
+
+            .back{
+                position: absolute;
+                left: 2vw;
+                text-decoration: none;
+            }
+
+            .back img{
+                width: 35px;
+                background-color: black;
+            }
+
+            @media only screen and (max-width: 950px) {
+                .footer {
+                    all: revert;
+                }
+                
+                .left {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: black;
+                    color: white;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-family: 'Segoe UI';
+                }
+                
+                .right {
+                    all: revert;
+                }
+                
+                .right {
+                    background-color: black;
+                    color: white;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-family: 'Segoe UI';
+                }
+                
+                .right h1 {
+                    text-align: center;
+                }
+                
+                .footerbelow {
+                    all: revert;
+                }
+                
+                .copy {
+                    padding-bottom: 20px;
+                    padding-top: 20px;
+                    background-color: black;
+                    color: white;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-family: 'Segoe UI';
+                    font-size: 100%;
+                }
+                
+                .copy h1 {
+                    text-align: center;
+                }
+                
+                .logobelow {
+                    background-color: black;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-family: 'Segoe UI';
+                }
+                
+                .login img {
+                    height: 60px;
+                }
+                
+                .video{
+                    all: revert;
+                }
+                
+                video{
+                    width: 100%;
+                    height: 35vh;
+                    padding-top: 20px;
+                }
+                
+                .namemovie {
+                    all: revert;
+                }
+                
+                .title{
+                    padding-top: 20px;
+                    padding: 10px;
+                }
+                
+                .dis{
+                    display: inline;
+                }
+                
+                .Storyline{
+                    padding-left: 5vw;
+                }
+                
+                .back img{
+                    width: 30px;
+                    background-color: black;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    changeContent(videoUrl, videoName, videoText);
+}
+
+
+const styles = `
+#sessions-container {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.sub button {
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+}
+
+.sessions {
+gap: 15px;
+}
+
+.S01 {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 80px;
+height: 30px;
+border: 3px solid black;
+border-radius: 8px;
+}
+
+.S01 button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 80px;
+height: 30px;
+text-decoration: none;
+font-weight: bold;
+font-family: 'Segoe UI';
+border: none;
+cursor: pointer;
+gap: 15px;
+}
+
+.sessionbutton1 {
+background-color: white;
+color: black;
+border-radius: 8px;
+}
+
+.sessionbutton2 {
+background-color: white;
+color: black;
+border-radius: 8px;
+}
+
+.sessionbutton3 {
+background-color: white;
+color: black;
+border-radius: 8px;
+}
+
+.sessionbutton4 {
+background-color: white;
+color: black;
+border-radius: 8px;
+}
+
+.sessionbutton5 {
+background-color: white;
+color: black;
+border-radius: 8px;
+}
+
+.episode-list {
+padding-top: 30px;
+}
+
+.episode-list-box {
+padding: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+a {
+text-decoration: none;
+}
+
+a .Episode {
+border-radius: 15px;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 5vh;
+width: 80vw;
+border: 4px solid black;
+color: white;
+text-decoration: none;
+font-weight: bold;
+font-family: 'Segoe UI';
+}
+
+.dis h1 {
+font-size: 150%;
+}
+
+.dis {
+align-items: center;
+justify-content: center;
+width: 80vw;
+color: white;
+text-decoration: none;
+font-weight: bold;
+font-family: 'Segoe UI';
+display: flex;
+padding-left: 7.5vw;
+padding-top: 30px;
+}
+
+.contant {
+padding: 2.5vw;
+}
+
+a .Episode:hover {
+color: black;
+background-color: rgb(77, 242, 242);
+}
+`;
+
+const webSeriesData = [
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 },
+            { number: 3 },
+            { number: 4 },
+            { number: 5 },
+        ],
+        episodes: [
+            ["S1.E1 - Efectuar lo acordado", "S1.E2 - Imprudencias letales", "S1.E3 - Errar al disparar", "S1.E4 - Caballo de Troya", "S1.E5 - El día de la marmota", "S1.E6 - La cálida Guerra Fría", "S1.E7 - Refrigerada inestabilidad", "S1.E8 - Tú lo has buscado", "S1.E9 - El que la sigue la consigue"],
+            ["S2.E1 - Se acabaron las máscaras", "S2.E2 - La cabeza del plan", "S2.E3 - Cuestión de eficacia", "S2.E4 - ¿Qué hemos hecho?", "S2.E5 - A contrarreloj", "S2.E6 - Bella ciao"],
+            ["S3.E1 - Hemos vuelto", "S3.E2 - Aikido", "S3.E3 - 48 metros bajo el suelo", "S3.E4 - La hora del delfín", "S3.E5 - Bum, bum, ciao", "S3.E6 - Todo pareció insignificante", "S3.E7 - Pequeñas vacaciones", "S3.E8 - La deriva"],
+            ["S4.E1 - Game over", "S4.E2 - La boda de Berlín", "S4.E3 - Lección de anatomía", "S4.E4 - Suspiros de España", "S4.E5 - 5 minutos antes", "S4.E6 - KO técnico", "S4.E7 - Tumbar la carpa", "S4.E8 - Plan París"],
+            ["S5.E1 - El final del camino", "S5.E2 - ¿Crees en la reencarnación?", "S5.E3 - El espectáculo de la vida", "S5.E4 - Tu sitio en el cielo", "S5.E5 - Vivir muchas vidas", "S5.E6 - Válvulas de escape", "S5.E7 - Ciencia ilusionada", "S5.E8 - La teoría de la elegancia", "S5.E9 - Lo que se habla en la cama", "S5.E10 - Una tradición familiar"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 }
+        ],
+        episodes: [
+            ["S1.E1 - UPSC - Optional Me Kya Hai?", "S1.E2 - Teacher Sahi Hona Chahiye", "S1.E3 - Positive Approach Rakh Yaar", "S1.E4 - Plan B", "S1.E5 - Pre... Mains Aur Life"],
+            ["S2.E1 - Self Study", "S2.E2 - Strategy", "S2.E3 - Murphy's Law", "S2.E4 - Mock Interview", "S2.E5 - Final Interview"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ La energía del amor","S1.E2 ∙ El ancla y el lobo","S1.E3 ∙ Póker de embriones","S1.E4 ∙ Un aquarium en la espalda","S1.E5 ∙ After Love","S1.E6 ∙ La noche de los limones","S1.E7 ∙ La última virgen de occidente","S1.E8 ∙ Un elefante en peligro de extinción"]
+        ]
+    },
+
+    {
+        sessions: [
+            { number: 1 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ CA Kyu Karna Hai?","S1.E2 ∙ Overhead Expenses","S1.E3 ∙ Write Off","S1.E4 ∙ Group 1 Group 2","S1.E5 ∙ Balance Sheet"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Bhutte Bane Popcorn","S1.E2 ∙ Stuti Ko Kaise Pataun?","S1.E3 ∙ Kisne Mara Atom Bomb?","S1.E4 ∙ POV: CCTV","S1.E5 ∙ Masala Mass Bunk","S1.E6 ∙ Stuti Ko Kaise Manau?","S1.E7 ∙ Mistri Bane Kalakar","S1.E8 ∙ 200 Ka Ek","S1.E9 ∙ Surprise Test Pro Max","S1.E10 ∙ Stuti Kahan Hai Yaar?","S1.E11 ∙ Who's the hottie?","S1.E12 ∙ Gaurav - Bhagao Andolan","S1.E13 ∙ That's What Friends Do","S1.E14 ∙ Dosti Ka Interval","S1.E15 ∙ Analysis - E - Anirban","S1.E16 ∙ School Bani Pathshala","S1.E17 ∙ Gender - Bender!","S1.E18 ∙ Head Girl Kaun Hai?","S1.E19 ∙ Abey Ye Kya Ho Gaya?"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Status - RAC","S1.E2 ∙ Status - CNF","S1.E3 ∙ Wl"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 },
+            { number: 3 },
+            { number: 4 },
+        ],
+        episodes: [
+            ["S1.E1 - Super Sidey", "S1.E2 - Crime and Punishment", "S1.E3 - Bulati Hai Magar...", "S1.E4 - Maa Ki Aankh", "S1.E5 - Mera Pehla Pehla Valentine Hai", "S1.E6 - Final Exam"],
+            ["S2.E1 ∙ Sam Kahan Hai?","S2.E2 ∙ Naam Wahi, Dosti Nayi","S2.E3 ∙ Emotions Ki Wrong Delivery","S2.E4 ∙ Chemistry","S2.E5 ∙ Time Time Ki Baat Hai","S2.E6 ∙ Winners and Losers"],
+            ["S3.E1 ∙ Azaadi","S3.E2 ∙ Ice Breaker","S3.E3 ∙ Surprise Ya Shock","S3.E4 ∙ Saahdhaani Hati Durghatna Ghati","S3.E5 ∙ Dil Dosti Dooriyan","S3.E6 ∙ Picture Abhi Baaki Hai Mere Dost"],
+            ["S4.E1 ∙ Dekho, Woh Aa Gaya!","S4.E2 ∙ Hungama ho gaya!","S4.E3 ∙ Mujhse Dosti Karoge?","S4.E4 ∙ Humko saathi mil gaya","S4.E5 ∙ Do dil mil rahe hain, Magar..","S4.E6 ∙ Fir Milenge... Chalte Chalte..."]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 },
+            { number: 3 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Jaati Na Poochho Saadhu Ki","S1.E2 ∙ Dekh Tamasha Kursi Ka","S1.E3 ∙ Ghoonghat Ke Pat Khol","S1.E4 ∙ Saadho Ye Murdo Ka Gaaon","S1.E5 ∙ Kaun Thagwa Nagriya Lootal Ho Rama","S1.E6 ∙ Na Kaahu Se Dosti Na Kahu Se Bair","S1.E7 ∙ Bahot Kathin Hai Dagar Panghat Ki","S1.E8 ∙ Maya Maha Thagni Hum Jaani","S1.E9 ∙ Chah Gyi Chinta Miti Manuaa Beparwaah","S1.E10 ∙ Jo Ghar Phoonke Aapno Chale Humare Saath"],
+            ["S2.E1 ∙ Jungle Raj","S2.E2 ∙ Daagi Bane Baagi","S2.E3 ∙ Vibhajan","S2.E4 ∙ Ashirvaad","S2.E5 ∙ Vinashkale Viprite Buddhi","S2.E6 ∙ Pati, Patni aur Woh","S2.E7 ∙ Kingmaker","S2.E8 ∙ Sheh Aur Maat","S2.E9 ∙ Hawamahal","S2.E10 ∙ Mastermind"],
+            ["S3.E1 ∙ Pareksha Ki Tayari","S3.E2 ∙ Andhere Mein","S3.E3 ∙ Charo Khane Chit","S3.E4 ∙ Behti Ganga","S3.E5 ∙ Nyay ya Badla","S3.E6 ∙ Maati ka Khilona","S3.E7 ∙ Raj Tilak","S3.E8 ∙ Bihar Ki Maharani"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Paisa Kamaya Nahin Banaya Jata Hain","S1.E2 ∙ Choomantar","S1.E3 ∙ Khota Sikka","S1.E4 ∙ Mubarak Ho Aapko Stamp Paper Hua Hain","S1.E5 ∙ I Love You","S1.E6 ∙ Abracadabra","S1.E7 ∙ Logic Ka Magic","S1.E8 ∙ Mumbai Ka King","S1.E9 ∙ Bina Daant Ka Sher","S1.E10 ∙ Truth Serum"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ War and Peace","S1.E2 ∙ It's Like Gravity","S1.E3 ∙ The Greater Good","S1.E4 ∙ A Tryst with Destiny","S1.E5 ∙ The Outsider","S1.E6 ∙ The Democratic Process","S1.E7 ∙ We are at War","S1.E8 ∙ A New Dawn"],
+            ["S2.E1 ∙ Lift Off","S2.E2 ∙ Burden Of Proof","S2.E3 ∙ A Lasting Legacy","S2.E4 ∙ The Price Of War","S2.E5 ∙ Behind Enemy Lines","S2.E6 ∙ Power Over Peace","S2.E7 ∙ The Last Guard","S2.E8 ∙ Smiling Buddha"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 },
+            { number: 3 },
+            { number: 4 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ The Hint", "S1.E2 ∙ Tommy", "S1.E3 ∙ Paneer Sex Masala", "S1.E4 ∙ Spank Me", "S1.E5 ∙ Happily Fucked Up"],
+            ["S2.E1 ∙ Penguins", "S2.E2 ∙ Double Trouble", "S2.E3 ∙ Growing up", "S2.E4 ∙ Sub-group", "S2.E5 ∙ Long Distance Friendship"],
+            ["S3.E1 ∙ Happy Ending", "S3.E2 ∙ No More Secrets", "S3.E3 ∙ Loser", "S3.E4 ∙ Beer & Whiskey", "S3.E5 ∙ Problem Kya Hai?"],
+            ["S4.E1 ∙ Aaya Hosh?", "S4.E2 ∙ Lies and Secrets", "S4.E3 ∙ Secret Trip", "S4.E4 ∙ Adulting", "S4.E5 ∙ Farewell"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Inventory", "S1.E2 ∙ Assembly Line", "S1.E3 ∙ Optimization", "S1.E4 ∙ Shut Down", "S1.E5 ∙ Overhaul"],
+            ["S2.E1 ∙ Reasoning", "S2.E2 ∙ Control System", "S2.E3 ∙ Atmospheric Pressure", "S2.E4 ∙ Repair & Maintenance", "S2.E5 ∙ Packaging"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 },
+            { number: 3 },
+            { number: 4 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Tehri","S1.E2 ∙ Hum Do Hamare Do","S1.E3 ∙ Itwaar","S1.E4 ∙ Batti Aa Gayi","S1.E5 ∙ Tyohaar"],
+            ["S2.E1 ∙ Bijlee Ka Bill","S2.E2 ∙ Cheeni Kam, Paani Zyaada","S2.E3 ∙ Saparivaar","S2.E4 ∙ Kal Board ka Paper hai","S2.E5 ∙ Kiraana"],
+            ["S3.E1 ∙ Mission Admission","S3.E2 ∙ LTA","S3.E3 ∙ Agua","S3.E4 ∙ Satyanarayan Varta Katha","S3.E5 ∙ Izzat Ki Chamkaar"],
+            ["S4.E1 ∙ 'Kaaran Batau' Notice","S4.E2 ∙ Chinaiti","S4.E3 ∙ Ghar Ka Kabaad","S4.E4 ∙ Teesra Pahiya","S4.E5 ∙ Pita, Putra aur Prempatra"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Risk Se Ishq", "S1.E2 ∙ Cobra Killer", "S1.E3 ∙ Paise Ki Dukaan", "S1.E4 ∙ Harshad Mehta Is A Liar", "S1.E5 ∙ Kundali Mein Shani", "S1.E6 ∙ Stop Press", "S1.E7 ∙ Dalal Street Ka Dariya", "S1.E8 ∙ Matador", "S1.E9 ∙ Ek Crore Ka Suitcase", "S1.E10 ∙ Main History Banana Chahta Hoon"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 },
+            { number: 3 },
+            { number: 4 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Pehla Nasha", "S1.E2 ∙ Dil To Baccha Hai Ji", "S1.E3 ∙ Ae Kash Ke Hum", "S1.E4 ∙ Kya Se Kya Ho Gaya", "S1.E5 ∙ Meri Soni Meri Tamanna"],
+            ["S2.E1 ∙ Kuch Toh Hua Hai, Kuch Hogaya Hai", "S2.E2 ∙ Chhukar Mere Mann Ko", "S2.E3 ∙ Mera Dil Bhi Kitna Pagal Hai", "S2.E4 ∙ Aane Wala Pal Jaane Wala Hai", "S2.E5 ∙ Agar Tum Saath Ho"],
+            ["S3.E1 ∙ Baahon Mein Chale Aao", "S3.E2 ∙ Chupana Bhi Nahi Aata, Jataana Bhi Nahi Aata", "S3.E3 ∙ Jab Koi Baat Bigad Jaaye", "S3.E4 ∙ Khoya Khoya Chand", "S3.E5 ∙ Kuch Tum Kaho Kuch Hum Kahein"],
+            ["S4.E1 ∙ Kabhi Toh Nazar Milao, Kabhi To Kareeb Aao", "S4.E2 ∙ Ye Kahan Aagaye Hum", "S4.E3 ∙ Yaad Aenge Ye Pal", "S4.E4 ∙ Pyar Humein Kis Mod Pe Le Aaya", "S4.E5 ∙ O Saathi Re, Tere Bina Bhi Kya Jeena"]
+
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Zakhm","S1.E2 ∙ Mission","S1.E3 ∙ Mehmaan","S1.E4 ∙ Sweetly-waala","S1.E5 ∙ Abhimanyu","S1.E6 ∙ Magic Trick","S1.E7 ∙ Imarti"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 },
+            { number: 3 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Gram Panchayat Phulera","S1.E2 ∙ Bhootha Ped","S1.E3 ∙ Chakke Wali Kursi","S1.E4 ∙ Hamara Neta Kaisa Ho?","S1.E5 ∙ Computer Nahi Monitor","S1.E6 ∙ Bahot Hua Samman","S1.E7 ∙ Ladka Tez Hai Lekin..","S1.E8 ∙ Jab Jaago Tabhi Savera"],
+            ["S2.E1 ∙ Naach","S2.E2 ∙ Bol Chaal Band","S2.E3 ∙ Kranti","S2.E4 ∙ Tension","S2.E5 ∙ Jaise Ko Taisa","S2.E6 ∙ Aukaat","S2.E7 ∙ Dost Yaar","S2.E8 ∙ Parivaar"],
+            ["S3.E1 ∙ Rangbaazi","S3.E2 ∙ Gaddha","S3.E3 ∙ Ghar Ya Eent-Patthar?","S3.E4 ∙ Atma Manthan","S3.E5 ∙ Shanti Samjhauta","S3.E6 ∙ Chingaari","S3.E7 ∙ Shola","S3.E8 ∙ Hamla"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Mugunghwa kkoch-i pideon nal","S1.E2 ∙ Ji-ok","S1.E3 ∙ Usan-eul sseun namja","S1.E4 ∙ Jjollyeodo pyeonmeokgi","S1.E5 ∙ Pyeongdeung-han sesang","S1.E6 ∙ Kkanbu","S1.E7 ∙ VIPS","S1.E8 ∙ Peulonteu maen","S1.E9 ∙ Unsu joeun nal"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Artist", "S1.E2 ∙ Social Service", "S1.E3 ∙ CCFART", "S1.E4 ∙ Dhanrakshak", "S1.E5 ∙ Second Oldest Profession", "S1.E6 ∙ Cat and Mouse", "S1.E7 ∙ Supernote", "S1.E8 ∙ Crash and Burn"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Jhandu", "S1.E2 ∙ Gooda", "S1.E3 ∙ Wafadar", "S1.E4 ∙ Virginity", "S1.E5 ∙ Bhaukal", "S1.E6 ∙ Barfi", "S1.E7 ∙ Lions Of Mirzapur", "S1.E8 ∙ Tandav", "S1.E9 ∙ Yogya"],
+            ["S2.E1 ∙ Dhenkul", "S2.E2 ∙ Khargosh", "S2.E3 ∙ Viklaang Quota", "S2.E4 ∙ Bhaymukt", "S2.E5 ∙ Langda", "S2.E6 ∙ Ankush", "S2.E7 ∙ Ood Bilaav", "S2.E8 ∙ Chauchak", "S2.E9 ∙ Butterscotch", "S2.E10 ∙ King of Mirzapur"]
+        ]
+    },
+
+   
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 },
+            { number: 3 },
+            { number: 4 }
+        ],
+        episodes: [
+          ["S1.E1 ∙ Intro","S1.E2 ∙ Proving Identity","S1.E3 ∙ F.O.S.L.A","S1.E4 ∙ GPL","S1.E5 ∙ End Sem"],
+          ["S2.E1 ∙ D.I.S.C.O","S2.E2 ∙ Love-Square","S2.E3 ∙ Gandagi","S2.E4 ∙ Ghar Wapsi"],
+          ["S3.E1 ∙ Failed Experiments","S3.E2 ∙ Wing Chor","S3.E3 ∙ Lights Camera Cut","S3.E4 ∙ Dosti Ka Udhar","S3.E5 ∙ G.S.H.A","S3.E6 ∙ Dear Seniors"],
+          ["S4.E1 ∙ Single Room","S4.E2 ∙ Curriculum Vitae","S4.E3 ∙ Compromise","S4.E4 ∙ Day Zero","S4.E5 ∙ The Offer","S4.E6 ∙ Hostel Departure"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ The Scar","S1.E2 ∙ Sweet Smell of Success","S1.E3 ∙ Kiss of Love","S1.E4 ∙ Bombay Confidential","S1.E5 ∙ Return of the Game","S1.E6 ∙ Nights in White Satin","S1.E7 ∙ The Crown","S1.E8 ∙ Feud","S1.E9 ∙ Till Death Do Us Part"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ All That Glitters is Gold","S1.E2 ∙ Star Struck Lovers","S1.E3 ∙ It's Never Too Late","S1.E4 ∙ The Price of Love","S1.E5 ∙ A Marriage of Convenience","S1.E6 ∙ Something Old, Something New","S1.E7 ∙ A Royal Affair","S1.E8 ∙ Pride and Bridezilla","S1.E9 ∙ The Great Escape"],
+            ["S2.E1 ∙ Mirror Mirror on the Wall","S2.E2 ∙ Beauty and the Beast","S2.E3 ∙ And They Lived Happily Ever After","S2.E4 ∙ Love Story","S2.E5 ∙ The Heart Skipped a Beat","S2.E6 ∙ Warrior Princesses","S2.E7 ∙ A Taste of Heaven"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Khabardaar","S1.E2 ∙ Vardaan","S1.E3 ∙ Azaadi","S1.E4 ∙ Kismat","S1.E5 ∙ Baazi","S1.E6 ∙ Shraap"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Threat","S1.E2 ∙ Sabotage","S1.E3 ∙ Complications","S1.E4 ∙ Gatecrasher","S1.E5 ∙ Falling Apart","S1.E6 ∙ Pieces Of The Puzzle","S1.E7 ∙ Betrayal","S1.E8 ∙ Escape","S1.E9 ∙ End Game","S1.E10 ∙ A Matter Of Choice"],
+            ["S2.E1 ∙ From The Frying Pan To The Fire","S2.E2 ∙ No Visual","S2.E3 ∙ The Trade Off","S2.E4 ∙ Caught Off Guard","S2.E5 ∙ Plan B","S2.E6 ∙ Cat And Mouse","S2.E7 ∙ Sneak In, Sneak Out","S2.E8 ∙ Beginning Of The End","S2.E9 ∙ Connecting The Dots","S2.E10 ∙ Old Friends Reveal Themselves","S2.E11 ∙ Inching Closer","S2.E12 ∙ Against The Clock"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Episode #1", "S1.E2 ∙ Episode #2", "S1.E3 ∙ Episode #3", "S1.E4 ∙ Episode #4", "S1.E5 ∙ Episode #5", "S1.E6 ∙ Episode #6", "S1.E7 ∙ Episode #7", "S1.E8 ∙ Episode #8", "S1.E9 ∙ Episode #9", "S1.E10 ∙ Episode #10"],
+            ["S2.E1 ∙ Episode #1", "S2.E2 ∙ Episode #2", "S2.E3 ∙ Episode #3", "S2.E4 ∙ Episode #4", "S2.E5 ∙ Episode #5", "S2.E6 ∙ Episode #6", "S2.E7 ∙ Episode #7", "S2.E8 ∙ Episode #8", "S2.E9 ∙ Episode #9", "S2.E10 ∙ Episode #10"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Homecoming","S1.E2 ∙ Lifting the Veil","S1.E3 ∙ Genesis","S1.E4 ∙ Remains of the Day","S1.E5 ∙ The Enemy Within","S1.E6 ∙ Bittersweet Bye-Bye","S1.E7 ∙ The Day the Music Died","S1.E8 ∙ Resurrection"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Episode #1", "S1.E2 ∙ Episode #2", "S1.E3 ∙ Episode #3", "S1.E4 ∙ Episode #4"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Mallikajaan: The Queen of Heeramandi","S1.E2 ∙ Fareedanjaan: The Challenger Returns","S1.E3 ∙ Waheedajaan - Scarred for Life","S1.E4 ∙ Alamzeb: The Innocent Pawn","S1.E5 ∙ Tajdar: The Lover's Dilemma","S1.E6 ∙ Tajdar & Alamzeb: Nation vs. Love","S1.E7 ∙ Bibbojaan - Long Live the Revolution","S1.E8 ∙ Heeramandi: The Swan Song"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Tum Toh Thehre Pardesi","S1.E2 ∙ Love, Sex Aur Consent","S1.E3 ∙ Love Mein Lagi Hai","S1.E4 ∙ Awaara","S1.E5 ∙ Rebound","S1.E6 ∙ Brahmastra","S1.E7 ∙ Full Circle","S1.E8 ∙ Fanaa","S1.E9 ∙ Tharki"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Infection","S1.E2 ∙ Diagnosis","S1.E3 ∙ Complications","S1.E4 ∙ Surgery","S1.E5 ∙ Recovery"],
+            ["S2.E1 ∙ Honeymoon Period","S2.E2 ∙ Donning","S2.E3 ∙ Patient Zero","S2.E4 ∙ Lockdown","S2.E5 ∙ Critical Condition"]
+        ]
+    },
+    {
+        sessions: [
+            { number: 1 },
+            { number: 2 },
+            { number: 3 }
+        ],
+        episodes: [
+            ["S1.E1 ∙ Daddy's Little Princess","S1.E2 ∙ Being HUMAyuN","S1.E3 ∙ Pehla Pehla Pyaar, Pehla Pehla Bar","S1.E4 ∙ Unstable Equilibrium","S1.E5 ∙ Triple H Versus The Rock"],
+            ["S2.E1 ∙ Time For A Change","S2.E2 ∙ Sambhog Shastra","S2.E3 ∙ Roop Ki Rani Choron Ka Raja","S2.E4 ∙ Chhayajaal","S2.E5 ∙ A Night To Remember"],
+            ["S3.E1 ∙ It's Complicated","S3.E2 ∙ All is Fair","S3.E3 ∙ Rumours","S3.E4 ∙ Week of Love","S3.E5 ∙ Is this how it ends?"]
+        ]
+    },
+    
+];
+
+function addStyles(styles) {
+    const styleSheet = document.createElement("style");
+    styleSheet.type = "text/css";
+    styleSheet.innerText = styles;
+    document.head.appendChild(styleSheet);
+}
+
+function generateSessionsHTML(sessions) {
+    let sessionsHTML = '<div class="sessions">';
+    sessions.forEach((session, index) => {
+        sessionsHTML += `
+        <div class="S01 box${index + 1}">
+            <button class = "sessionbutton${index + 1}" onclick="changeEpisodes(${index + 1})">
+                Session ${session.number}
+            </button>
+        </div>`;
+    });
+    sessionsHTML += '</div>';
+    return sessionsHTML;
+}
+
+function changeEpisodes(sessionIndex) {
+    const targetElementId = "episode-list";
+    const seriesIndex = document.getElementById('content-container').getAttribute('data-series-index');
+    const pageEpisodes = webSeriesData[seriesIndex].episodes[sessionIndex - 1];
+    document.getElementById(targetElementId).innerHTML = generateEpisodesHTML(pageEpisodes);
+}
+
+function generateEpisodesHTML(episodes) {
+    let episodesHTML = '<div class="episode-list">';
+    episodes.forEach((episode) => {
+        episodesHTML += `
+        <div class="episode-list-box">
+            <a href="">
+                <div class="Episode">
+                    ${episode}
+                </div>
+            </a>
+        </div>`;
+    });
+    episodesHTML += '</div>';
+    return episodesHTML;
+}
+
+function showContent(seriesIndex) {
+    document.getElementById('content-container').style.display = 'block';
+    const sessionsContainer = document.getElementById("sessions-container");
+    const episodesContainer = document.getElementById("episode-list");
+
+    const sessionsToDisplay = webSeriesData[seriesIndex].sessions;
+    sessionsContainer.innerHTML = generateSessionsHTML(sessionsToDisplay);
+    episodesContainer.innerHTML = generateEpisodesHTML(webSeriesData[seriesIndex].episodes[0]);
+    document.getElementById('content-container').setAttribute('data-series-index', seriesIndex);
+
+    document.querySelector('.sessions').style.display = 'flex';
+    document.querySelector('.episode-list').style.display = 'block';
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    addStyles(styles);
+    for (let i = 1; i <= 32; i++) {
+        document.getElementById(`button${i}`).addEventListener('click', () => {
+            showContent(i - 1);
+        });
+    }
+});
+        </script>
+  </body>
+</html>
