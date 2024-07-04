@@ -1007,7 +1007,7 @@
             </div>
         </div>
         <script>
-        //image slider
+  //image slider
 let slideIndex = 0;
 showSlides();
 
@@ -1067,9 +1067,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "ImMATURE.mp4"  
     ];
 
-
     const videoNames = [
-        "Money Heist",
+        `<h1 style="font-size: 40px;">Money Heist</h1>`,
         "Aspirants",
         "Berlin",
         "Half CA",
@@ -1079,27 +1078,27 @@ document.addEventListener("DOMContentLoaded", function () {
         "Maharani",
         "Scam 2003",
         "Rocket Boys",
-        "College Romance",
+        `<h1 style="font-size: 30px;">College Romance</h1>`,
         "Kota Factory",
         "Gullak",
         "Scam 1992",
         "Flames",
-        "The Night Manager",
+        `<h1 style="font-size: 27px;">The Night Manager</h1>`,
         "Panchayat",
         "Squid Games",
         "Farzi",
         "Mirzapur",
         "Hostal Daze",
-        "Sultan Of Delhi",
-        "Made In Heaven",
+        `<h1 style="font-size: 30px;">Sultan Of Delhi</h1>`,
+        `<h1 style="font-size: 30px;">Made In Heaven</h1>`,
         "Taaza Khabar",
         "Hostages",
         "Bhaukaal",
-        "Saas Bahu Aur Flamingo",
-        "The Railway Men",
+        `<h1 style="font-size: 30px;">Saas Bahu Aur<br>Flamingo</h1>`,
+        `<h1 style="font-size: 30px;">The Railway Men</h1>`,
         "Heeramandi",
         "Indori Ishq",
-        "Operation MBBS",
+        `<h1 style="font-size: 30px;">Operation MBBS</h1>`,
         "ImMATURE"
     ];
 
@@ -1344,6 +1343,7 @@ function handleButtonClick(videoUrl, videoName, videoText) {
             }
 
             .namemovie {
+                
                 padding-left: 9vh;
                 padding-top: 20px;
             }
@@ -1647,6 +1647,10 @@ function handleButtonClick(videoUrl, videoName, videoText) {
                 .right {
                     all: revert;
                 }
+
+                .sessions {
+                  gap: 10px;
+                 }
                 
                 .right {
                     background-color: black;
@@ -1663,6 +1667,51 @@ function handleButtonClick(videoUrl, videoName, videoText) {
                 .footerbelow {
                     all: revert;
                 }
+
+                .S01 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 65px;
+                height: 27px;
+                border: 3px solid black;
+                border-radius: 4px;
+                }
+
+                .S01 button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 65px;
+                height: 27px;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Segoe UI';
+                border: none;
+                cursor: pointer;
+                gap: 15px;
+                }
+
+                .sessionbutton1 {
+                  border-radius: 4px;
+                }
+
+                .sessionbutton2 {
+                 border-radius: 4px;
+                }
+
+                .sessionbutton3 {
+                  border-radius: 4px;
+                }
+
+                .sessionbutton4 {
+                 border-radius: 4px;
+                }
+
+                .sessionbutton5 {
+                border-radius: 4px;
+                }
+
                 
                 .copy {
                     padding-bottom: 20px;
@@ -1705,8 +1754,13 @@ function handleButtonClick(videoUrl, videoName, videoText) {
                 }
                 
                 .title{
+                    color: aqua;
                     padding-top: 20px;
                     padding: 10px;
+                }
+                
+                .title h1{
+                  font-size: 35px;
                 }
                 
                 .dis{
@@ -1753,7 +1807,7 @@ align-items: center;
 justify-content: center;
 width: 80px;
 height: 30px;
-border: 3px solid black;
+border: 4px solid black;
 border-radius: 8px;
 }
 
@@ -1775,30 +1829,35 @@ gap: 15px;
 background-color: white;
 color: black;
 border-radius: 8px;
+border: none;
 }
 
 .sessionbutton2 {
 background-color: white;
 color: black;
 border-radius: 8px;
+border: none;
 }
 
 .sessionbutton3 {
 background-color: white;
 color: black;
 border-radius: 8px;
+border: none;
 }
 
 .sessionbutton4 {
 background-color: white;
 color: black;
 border-radius: 8px;
+border: none;
 }
 
 .sessionbutton5 {
 background-color: white;
 color: black;
 border-radius: 8px;
+border: none;
 }
 
 .episode-list {
